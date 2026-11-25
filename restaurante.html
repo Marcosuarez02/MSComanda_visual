@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Fogón Santandereano - Carta y Menú Online</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .resto-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .resto-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .resto-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #111827;
+      font-family: var(--font-serif);
+    }
+
+    .resto-brand-icon {
+      font-size: 1.5rem;
+    }
+
+    .resto-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .resto-hero-title {
+      font-size: 3rem;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+
+    .resto-hero-slogan {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .resto-info-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .resto-pill {
+      background-color: #ffffff;
+      border: 1px solid var(--border-light);
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .resto-divider {
+      height: 1px;
+      background-color: var(--border-light);
+      margin: 3.5rem 0;
+    }
+
+    .menu-section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .menu-title {
+      font-size: 2.3rem;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .dish-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .dish-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-border);
+    }
+
+    .dish-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #6b7280;
+      background-color: #f3f4f6;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      align-self: flex-start;
+    }
+
+    .dish-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .dish-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .dish-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .dish-description {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #25d366;
+      color: white;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      z-index: 100;
+    }
+
+    .whatsapp-floating:hover {
+      background-color: #20ba5a;
+      transform: translateY(-2px);
+    }
+
+    .bottom-back {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      .resto-header {
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resto-container">
+    <!-- Encabezado del Portal -->
+    <header class="resto-header">
+      <div class="resto-brand">
+        <span class="resto-brand-icon">🍲</span>
+        <span id="restoNameText">El Fogón Santandereano</span>
+      </div>
+
+      <a href="https://wa.me/573001234567" target="_blank" class="btn btn-primary btn-pill">
+        Pedir por WhatsApp
+      </a>
+    </header>
+
+    <!-- Información del Restaurante -->
+    <section class="resto-hero">
+      <h1 class="resto-hero-title heading-serif" id="restoTitle">El Fogón Santandereano</h1>
+      <p class="resto-hero-slogan" id="restoSlogan">Sabor criollo y tradición familiar</p>
+
+      <div class="resto-info-pills">
+        <div class="resto-pill">
+          <span>📍</span>
+          <span id="restoAddress">Calle 35 # 19-42, Centro</span>
+        </div>
+        <div class="resto-pill">
+          <span>🕒</span>
+          <span>Abierto: 11:30 AM - 10:00 PM</span>
+        </div>
+        <div class="resto-pill">
+          <span>📷</span>
+          <span id="restoInstagram">@elfogonsantandereano</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="resto-divider"></div>
+
+    <!-- Sección Carta -->
+    <section>
+      <div class="menu-section-header">
+        <h2 class="menu-title heading-serif">Nuestra Carta</h2>
+        <p class="menu-subtitle">Precios e ingredientes actualizados en tiempo real</p>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <div class="dish-card">
+          <span class="dish-category">PLATOS FUERTES</span>
+          <div class="dish-card-header">
+            <h3 class="dish-name">Bandeja Paisa</h3>
+            <span class="dish-price">$32,000</span>
+          </div>
+          <p class="dish-description">
+            Frijoles cargamanto, arroz blanco, chicharrón crujiente, carne molida, huevo frito, tajada de plátano maduro y arepa.
+          </p>
+        </div>
+
+        <div class="dish-card">
+          <span class="dish-category">PLATOS FUERTES</span>
+          <div class="dish-card-header">
+            <h3 class="dish-name">Sancocho de Gallina</h3>
+            <span class="dish-price">$28,000</span>
+          </div>
+          <p class="dish-description">
+            Caldo criollo a fuego lento con presa campesina, plátano verde, yuca y mazorca tierna. Acompañado de arroz y aguacate.
+          </p>
+        </div>
+
+        <div class="dish-card">
+          <span class="dish-category">PLATOS FUERTES</span>
+          <div class="dish-card-header">
+            <h3 class="dish-name">Ajiaco Santafereño</h3>
+            <span class="dish-price">$26,000</span>
+          </div>
+          <p class="dish-description">
+            Pollo desmechado, alcaparras selectas, crema de leche fresca, tres variedades de papa y mazorca tierna.
+          </p>
+        </div>
+
+        <div class="dish-card">
+          <span class="dish-category">BEBIDAS</span>
+          <div class="dish-card-header">
+            <h3 class="dish-name">Limonada de Coco</h3>
+            <span class="dish-price">$9,000</span>
+          </div>
+          <p class="dish-description">
+            Bebida refrescante y natural cremosa preparada con leche de coco natural y toque de limón tahití.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://wa.me/573001234567" target="_blank" class="whatsapp-floating">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+    </svg>
+    Pedir por WhatsApp
+  </a>
+
+  <!-- Flecha de regreso -->
+  <div class="bottom-back">
+    <a href="index.html" class="back-arrow-link" title="Volver al inicio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+  </div>
+
+</body>
+</html>

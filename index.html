@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSComanda - El sistema de comandas para el restaurante pequeño</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- Navegación Superior -->
+  <header class="landing-nav">
+    <a href="index.html" class="brand-logo">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+      </div>
+      <span>MS<span class="brand-highlight">Comanda</span></span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#como-funciona" class="nav-link">Cómo funciona</a></li>
+      <li><a href="#funcionalidades" class="nav-link">Funcionalidades</a></li>
+      <li><a href="#precios" class="nav-link">Precios</a></li>
+      <li><a href="#preguntas" class="nav-link">Preguntas</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Iniciar sesión</a>
+      <a href="registro.html" class="btn btn-primary btn-sm btn-pill">Crear cuenta gratis</a>
+    </div>
+  </header>
+
+  <!-- Hero Section (pant1.png) -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="badge badge-primary">
+        <span class="badge-dot"></span>
+        Sin mensualidad obligatoria
+      </div>
+
+      <h1 class="hero-title">
+        El sistema de comandas hecho para el <em>restaurante pequeño</em>
+      </h1>
+
+      <p class="hero-description">
+        Mesera, cocina y caja conectadas en tiempo real. Corre gratis en la red de tu local, o en la nube si prefieres tenerlo siempre disponible.
+      </p>
+
+      <div class="hero-actions">
+        <a href="registro.html" class="btn btn-primary btn-pill">
+          Probar gratis
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#como-funciona" class="btn btn-outline btn-pill">Ver cómo funciona</a>
+      </div>
+
+      <p class="hero-note">Sin tarjeta de crédito · Configuración en menos de 10 minutos</p>
+    </div>
+
+    <!-- Mockup KDS Cocina en Vivo interactivo -->
+    <div class="hero-mockup-wrapper">
+      <div class="hero-mockup">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-status">
+            <span class="mockup-status-dot"></span>
+            Cocina · en vivo
+          </div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="mockup-meta">
+            <span>3 pedidos activos</span>
+            <span>Promedio 9 min</span>
+          </div>
+
+          <!-- Tarjeta 1 -->
+          <div class="mockup-card">
+            <div class="mockup-card-header">
+              <span class="mockup-card-title">Mesa 7</span>
+              <span class="mockup-card-time">ahora</span>
+            </div>
+            <div class="mockup-card-items">
+              Sancocho de gallina<br>
+              Arroz blanco<br>
+              Limonada de coco
+            </div>
+            <span class="mockup-tag mockup-tag-new">⏱ Nuevo</span>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="mockup-card">
+            <div class="mockup-card-header">
+              <span class="mockup-card-title">Mesa 4</span>
+              <span class="mockup-card-time">6 min</span>
+            </div>
+            <div class="mockup-card-items">
+              Bandeja paisa ×2<br>
+              Jugo de mora<br>
+              <small style="color: #9ca3af;">Sin cebolla · término 3/4</small>
+            </div>
+            <span class="mockup-tag mockup-tag-prep">🔥 En preparación</span>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="mockup-card">
+            <div class="mockup-card-header">
+              <span class="mockup-card-title">Mesa 2</span>
+              <span class="mockup-card-time">14 min</span>
+            </div>
+            <div class="mockup-card-items">
+              Ajiaco<br>
+              Arepa de chócolo
+            </div>
+            <span class="mockup-tag mockup-tag-ready">✓ Listo para servir</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cinta de Beneficios (pant2.png) -->
+  <div class="feature-ribbon">
+    <div class="ribbon-container">
+      <div class="ribbon-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Funciona sin internet
+      </div>
+      <div class="ribbon-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Tiempo real entre mesera, cocina y caja
+      </div>
+      <div class="ribbon-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Configuración sin ayuda técnica
+      </div>
+      <div class="ribbon-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Hecho en Colombia
+      </div>
+    </div>
+  </div>
+
+  <!-- Cómo Funciona (pant2.png) -->
+  <section class="landing-section" id="como-funciona">
+    <div class="section-label">Cómo funciona</div>
+    <h2 class="section-title">Todo tu equipo conectado, sin que nadie cruce la cocina gritando</h2>
+
+    <div class="steps-grid">
+      <!-- Paso 1 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <span class="step-badge-num">Paso 1</span>
+        </div>
+        <span class="step-role">MESERA</span>
+        <h3 class="step-title">Toma el pedido desde su celular</h3>
+        <p class="step-desc">Selecciona la mesa, elige los platos del menú y agrega observaciones como "sin cebolla" o "término medio".</p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+              <line x1="6" y1="17" x2="18" y2="17"></line>
+            </svg>
+          </div>
+          <span class="step-badge-num">Paso 2</span>
+        </div>
+        <span class="step-role">COCINA</span>
+        <h3 class="step-title">Recibe la comanda al instante</h3>
+        <p class="step-desc">El pedido aparece en la pantalla de cocina en el mismo segundo. Se organiza por tiempo y se marca cuando está listo.</p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <span class="step-badge-num">Paso 3</span>
+        </div>
+        <span class="step-role">CAJA</span>
+        <h3 class="step-title">Cobra sin errores ni papelitos</h3>
+        <p class="step-desc">La cuenta se arma sola con lo que pidió cada mesa. Cierra, imprime o divide la cuenta en un solo toque.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funcionalidades (pant3.png) -->
+  <section class="landing-section" id="funcionalidades">
+    <div class="section-label">Funcionalidades</div>
+    <h2 class="section-title">Lo necesario para operar bien, sin funciones que nunca vas a usar</h2>
+
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+        </div>
+        <h3 class="feature-box-title">Funciona sin internet</h3>
+        <p class="feature-box-desc">En modo local, todo corre dentro de la red wifi de tu negocio. Si se cae el internet, el servicio sigue.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </div>
+        <h3 class="feature-box-title">Alertas cuando está listo</h3>
+        <p class="feature-box-desc">La mesera recibe una notificación en su celular apenas cocina marca el plato como terminado.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </div>
+        <h3 class="feature-box-title">Mapa de mesas</h3>
+        <p class="feature-box-desc">Visualiza qué mesas están ocupadas, con pedido pendiente o listas para cobrar, de un solo vistazo.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="feature-box-title">Roles por usuario</h3>
+        <p class="feature-box-desc">Cada persona ve solo lo que necesita: mesera, cocina, caja y administrador con permisos separados.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        </div>
+        <h3 class="feature-box-title">Impresión de comandas</h3>
+        <p class="feature-box-desc">Compatible con impresoras térmicas. Imprime la comanda en cocina y el recibo en caja si lo prefieres.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <h3 class="feature-box-title">Reporte de ventas del día</h3>
+        <p class="feature-box-desc">Al cierre sabes qué se vendió, cuánto entró y cuáles son tus platos más pedidos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios (pant4.png) -->
+  <section class="landing-section" id="precios">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="section-label">Precios</div>
+      <h2 class="section-title" style="margin: 0 auto 1rem;">La diferencia está en el costo mensual</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">El software tradicional cobra uses o no el sistema. MsComanda te deja elegir: local sin costo, o nube si quieres tenerlo siempre a la mano.</p>
+    </div>
+
+    <div class="pricing-container">
+      <!-- Plan Local -->
+      <div class="pricing-card">
+        <div class="pricing-name">Local</div>
+        <div class="pricing-price">Gratis <span class="pricing-period">para siempre</span></div>
+        <p class="pricing-desc">Corre en un computador o Raspberry Pi dentro de la red wifi de tu restaurante.</p>
+        
+        <ul class="pricing-features">
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Mesera, cocina y caja en tiempo real
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Usuarios ilimitados
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Funciona sin internet
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Impresión de comandas
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Reporte de ventas del día
+          </li>
+        </ul>
+
+        <a href="registro.html" class="btn btn-outline btn-block">Descargar gratis</a>
+      </div>
+
+      <!-- Plan Nube -->
+      <div class="pricing-card featured">
+        <span class="pricing-badge">Recomendado</span>
+        <div class="pricing-name">Nube</div>
+        <div class="pricing-price">$39.000 <span class="pricing-period">COP / mes</span></div>
+        <p class="pricing-desc">Siempre disponible desde cualquier lugar, con respaldo automático de tus datos.</p>
+
+        <ul class="pricing-features">
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Todo lo del plan Local
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Acceso desde fuera del restaurante
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Respaldos automáticos diarios
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Varias sedes en una sola cuenta
+          </li>
+          <li class="pricing-feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Soporte directo con el creador
+          </li>
+        </ul>
+
+        <a href="registro.html" class="btn btn-primary btn-block">Probar 30 días gratis</a>
+      </div>
+    </div>
+
+    <p class="pricing-subnote">Sin contratos. Puedes pasar de Local a Nube cuando quieras sin perder datos.</p>
+  </section>
+
+  <!-- Preguntas Frecuentes (pant5.png) -->
+  <section class="landing-section" id="preguntas">
+    <div class="faq-grid">
+      <div>
+        <div class="section-label">Preguntas frecuentes</div>
+        <h2 class="section-title">Lo que suelen preguntar antes de empezar</h2>
+        <p class="section-subtitle">Si tienes otra duda, escríbenos y el mismo creador te responde.</p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item active">
+          <button class="accordion-header">
+            ¿Qué necesito para usar el modo local?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="accordion-content">
+            Solo necesitas un computador convencional (o mini-PC / Raspberry Pi) conectado a tu red Wi-Fi local para que funcione como servidor central. Los celulares y tablets de los meseros se conectan a través de esa red sin consumir datos móviles.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            ¿Funciona si se va el internet?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="accordion-content">
+            ¡Sí, al 100%! El sistema opera dentro de tu red local, por lo que meseros, cocina y caja continúan comunicándose sin interrupciones aunque se caiga el servicio de tu proveedor de internet.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            ¿Puedo usar mis propias impresoras?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="accordion-content">
+            Sí, MSComanda es compatible con cualquier impresora térmica ESC/POS USB, red Ethernet o Bluetooth de 58mm y 80mm estándar del mercado.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            ¿Cuántos usuarios puedo crear?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="accordion-content">
+            Usuarios ilimitados. Puedes dar de alta a todos tus meseros, cocineros y cajeros con sus respectivos roles y códigos PIN de acceso.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            ¿Qué pasa con mis datos si cambio de plan?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="accordion-content">
+            Tus cartas, historial de ventas y configuraciones se migran de manera instantánea y transparente entre el modo local y la nube sin pérdida alguna.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Final (pant5-1.png) -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <div class="cta-banner">
+      <h2 class="cta-title">Empieza a ordenar mejor hoy</h2>
+      <p class="cta-subtitle">Crea tu cuenta y configura tu restaurante en menos de 10 minutos. Sin tarjeta, sin contratos.</p>
+      <a href="registro.html" class="btn btn-primary btn-pill" style="padding: 0.85rem 1.75rem; font-size: 1.05rem;">
+        Crear cuenta gratis →
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer (pant5-1.png) -->
+  <footer class="landing-footer">
+    <div class="footer-top">
+      <div class="footer-about">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <span>MS<span class="brand-highlight">Comanda</span></span>
+        </a>
+        <p class="footer-desc">Sistema de comandas para restaurantes pequeños. Proyecto desarrollado en el SENA, Colombia.</p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Producto</div>
+        <ul class="footer-links">
+          <li><a href="#como-funciona" class="footer-link">Cómo funciona</a></li>
+          <li><a href="#funcionalidades" class="footer-link">Funcionalidades</a></li>
+          <li><a href="#precios" class="footer-link">Precios</a></li>
+          <li><a href="#preguntas" class="footer-link">Preguntas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Recursos</div>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Guía de instalación</a></li>
+          <li><a href="#" class="footer-link">Impresoras compatibles</a></li>
+          <li><a href="#" class="footer-link">Soporte</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Términos de uso</a></li>
+          <li><a href="#" class="footer-link">Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 MSComanda. Todos los derechos reservados.</div>
+      <div>MSmanda.com</div>
+    </div>
+  </footer>
+
+  <script src="js/landing.js"></script>
+</body>
+</html>
