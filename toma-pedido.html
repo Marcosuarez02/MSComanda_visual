@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toma de Pedido - MSComanda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pos.css">
+</head>
+<body class="pos-layout">
+
+  <!-- Encabezado de Servicio (toma_pedido.png) -->
+  <header class="pos-header">
+    <div class="pos-header-left">
+      <span class="badge badge-primary">Modo Servicio</span>
+      <div style="font-size: 0.95rem; color: #374151;">
+        Mesera: <strong>María G.</strong>
+      </div>
+    </div>
+
+    <div class="pos-header-right">
+      <span style="font-size: 0.9rem; color: var(--text-muted);">Ubicación:</span>
+      <div class="btn btn-outline btn-sm" style="font-weight: 700;">
+        Mesa 4 (Terraza)
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="order-container">
+    <div>
+      <!-- Barra de Filtros de Menú -->
+      <div class="order-filter-bar">
+        <button class="filter-pill active" data-category="all">Todos</button>
+        <button class="filter-pill" data-category="tipicos">Platos Típicos</button>
+        <button class="filter-pill" data-category="bebidas">Bebidas</button>
+        <button class="filter-pill" data-category="adiciones">Adiciones</button>
+      </div>
+
+      <!-- Cuadrícula de Platos -->
+      <div class="dishes-grid" id="dishesGrid">
+        <!-- Renderizado dinámicamente por js/pedido.js -->
+      </div>
+    </div>
+
+    <!-- Panel Lateral: Comanda en Curso -->
+    <aside class="order-sidebar">
+      <div class="sidebar-header">
+        <h3 class="sidebar-title">Comanda en Curso</h3>
+        <span class="badge badge-primary" id="orderCountBadge">3 Artículos</span>
+      </div>
+
+      <!-- Lista de Items en la Comanda -->
+      <div class="order-items-list" id="orderList">
+        <!-- Renderizado por js/pedido.js -->
+      </div>
+
+      <!-- Totales y Acción -->
+      <div class="order-totals">
+        <span class="order-totals-label">Subtotal estimado:</span>
+        <span class="order-totals-value" id="subtotalValue">$70.500</span>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="btnSendToKitchen" style="padding: 0.85rem; font-size: 1rem;">
+        Enviar a Cocina
+      </button>
+    </aside>
+  </main>
+
+  <!-- Flecha de regreso abajo a la izquierda -->
+  <div style="position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 50;">
+    <a href="login.html" class="back-arrow-link" title="Volver al menú de roles">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/pedido.js"></script>
+</body>
+</html>
