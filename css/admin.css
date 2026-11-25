@@ -1,0 +1,321 @@
+/* ==========================================================================
+   MSComanda - Estilos del Panel Administrativo
+   ========================================================================== */
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+}
+
+/* Sidebar de Navegación */
+.admin-sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-light);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.admin-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.admin-nav-item:hover {
+  background-color: #f9fafb;
+  color: var(--primary);
+}
+
+.admin-nav-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Contenido Principal Admin */
+.admin-main {
+  padding: 2.5rem 3rem 5rem;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.admin-view-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.admin-share-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.share-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  gap: 0.5rem;
+}
+
+.share-copy-btn {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+.share-copy-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Tarjetas Administrativas */
+.admin-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de Marca y Preview (DIseñoWEB.png) */
+.brand-settings-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Mockup de Preview Web */
+.preview-mockup-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 90px;
+}
+
+.preview-mockup-top {
+  background-color: #f3f4f6;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.preview-mockup-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.preview-mockup-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+}
+
+.preview-mockup-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preview-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.preview-hero {
+  text-align: center;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.preview-hero-title {
+  font-size: 1.8rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: #111827;
+}
+
+.preview-hero-slogan {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.preview-footer {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Tablas Administrativas */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.925rem;
+}
+
+.admin-table th {
+  padding: 0.85rem 1rem;
+  background-color: #f9fafb;
+  color: var(--text-muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: #1f2937;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.btn-delete-row {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-delete-row:hover {
+  text-decoration: underline;
+  color: #dc2626;
+}
+
+/* Chips de Zonas */
+.zones-chips-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.zone-chip {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.zone-chip-close {
+  cursor: pointer;
+  color: #0369a1;
+  font-weight: 700;
+}
+
+/* Color picker preview */
+.color-picker-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.color-box-sample {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: #059669;
+  border: 1px solid var(--border-light);
+}
+
+@media (max-width: 1024px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+  .admin-sidebar {
+    height: auto;
+    position: relative;
+  }
+  .brand-settings-grid {
+    grid-template-columns: 1fr;
+  }
+  .preview-mockup-card {
+    position: static;
+  }
+}
