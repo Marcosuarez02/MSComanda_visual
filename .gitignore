@@ -1,0 +1,9 @@
+# Archivos del sistema y temporales
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencias futuras si se usa bundler
+node_modules/
+.vscode/
+.idea/
