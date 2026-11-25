@@ -1,0 +1,769 @@
+/* ==========================================================================
+   MSComanda - Estilos para Operaciones (Toma de Pedido, Cocina KDS, Caja)
+   ========================================================================== */
+
+/* Layout general de aplicación POS */
+.pos-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+}
+
+.pos-header {
+  height: 68px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.pos-header-left, .pos-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #d1fae5;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   1. MÓDULO DE TOMA DE PEDIDO
+   ========================================== */
+.order-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 390px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.order-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.filter-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-pill.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.dish-item-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.dish-item-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.dish-item-card.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background-color: #f9fafb;
+}
+
+.dish-item-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.dish-item-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.dish-item-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Panel Lateral de Comanda */
+.order-sidebar {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 90px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.order-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 0.85rem;
+}
+
+.order-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.order-item-qty {
+  color: var(--primary);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.order-item-note-input {
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.825rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background-color: #f9fafb;
+  color: var(--text-main);
+  outline: none;
+}
+
+.order-item-note-input:focus {
+  border-color: var(--primary);
+  background-color: #ffffff;
+}
+
+.order-totals {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.order-totals-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.order-totals-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ==========================================
+   2. MÓDULO DE COCINA EN VIVO (DARK THEME KDS)
+   ========================================== */
+.kds-page {
+  background-color: var(--kds-bg);
+  color: var(--kds-text);
+  min-height: 100vh;
+  padding: 2.5rem 3rem;
+}
+
+.kds-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.kds-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kds-title {
+  font-size: 2.4rem;
+  font-family: var(--font-serif);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kds-title::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
+
+.kds-subtitle {
+  color: var(--kds-muted);
+  font-size: 0.95rem;
+}
+
+.kds-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.kds-clock-box {
+  text-align: right;
+}
+
+.kds-clock {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #34d399;
+  font-variant-numeric: tabular-nums;
+}
+
+.kds-shift {
+  font-size: 0.8rem;
+  color: var(--kds-muted);
+}
+
+.kds-btn-stock {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.kds-btn-stock:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.kds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.kds-card {
+  background-color: var(--kds-card);
+  border: 1px solid var(--kds-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  transition: var(--transition);
+}
+
+.kds-card:hover {
+  border-color: #4b5563;
+}
+
+.kds-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.kds-table-title {
+  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kds-time-ago {
+  font-size: 0.85rem;
+  color: var(--kds-muted);
+  margin-top: 0.2rem;
+}
+
+.kds-items-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.kds-dish-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.kds-dish-line .qty {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.kds-dish-note {
+  background-color: #1a221f;
+  color: #fbbf24;
+  border: 1px solid #374151;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.kds-action-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.kds-btn-start {
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #60a5fa;
+}
+
+.kds-btn-start:hover {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.kds-btn-ready {
+  background: transparent;
+  border: 1px solid #f59e0b;
+  color: #fbbf24;
+}
+
+.kds-btn-ready:hover {
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+.kds-btn-deliver {
+  background: transparent;
+  border: 1px solid #10b981;
+  color: #34d399;
+}
+
+.kds-btn-deliver:hover {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+/* Modal Disponibilidad del Menú (controlPlatos.png) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-window {
+  background-color: #212327;
+  border: 1px solid #374151;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  box-shadow: var(--shadow-xl);
+  color: #f3f4f6;
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #9ca3af;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.modal-dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.modal-dish-row {
+  background-color: #2b2e34;
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-dish-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.modal-dish-status-text {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.status-dot-green {
+  color: #34d399;
+}
+
+.status-dot-red {
+  color: #ef4444;
+}
+
+/* ==========================================
+   3. MÓDULO DE CAJA Y MESAS
+   ========================================== */
+.cashier-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2.5rem;
+}
+
+.cashier-title-group {
+  margin-bottom: 2rem;
+}
+
+.cashier-title {
+  font-size: 2.8rem;
+  font-family: var(--font-serif);
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.cashier-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.free { background-color: var(--status-free); }
+.legend-dot.occupied { background-color: var(--status-occupied); }
+.legend-dot.pending { background-color: var(--status-pending); }
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.table-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 155px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.table-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.table-card.selected {
+  border: 2px solid var(--status-pending);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.table-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.table-card-num {
+  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: #111827;
+}
+
+.table-status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.table-status-indicator.free { background-color: var(--status-free); }
+.table-status-indicator.occupied { background-color: var(--status-occupied); }
+.table-status-indicator.pending { background-color: var(--status-pending); }
+
+.table-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.table-status-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.table-status-label.free { color: var(--status-free); }
+.table-status-label.occupied { color: var(--status-occupied); }
+.table-status-label.pending { color: var(--status-pending); }
+
+.table-meta-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Panel Lateral de Cuenta / Facturación */
+.bill-panel {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 90px;
+}
+
+.bill-badge-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--status-pending);
+  text-transform: uppercase;
+}
+
+.bill-table-title {
+  font-size: 2.2rem;
+  font-family: var(--font-serif);
+  color: #111827;
+  line-height: 1.1;
+}
+
+.bill-info-sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.bill-items-list {
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.bill-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.925rem;
+}
+
+.bill-summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.925rem;
+  color: var(--text-muted);
+}
+
+.bill-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+}
+
+.bill-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.5rem;
+}
+
+.bill-total-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.bill-total-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .order-container, .cashier-container {
+    grid-template-columns: 1fr;
+  }
+  .tables-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tables-grid {
+    grid-template-columns: 1fr;
+  }
+  .kds-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

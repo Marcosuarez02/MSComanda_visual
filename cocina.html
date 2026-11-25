@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocina - En Vivo - MSComanda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pos.css">
+</head>
+<body class="kds-page">
+
+  <!-- Header de Cocina en Vivo (Cocina.png) -->
+  <header class="kds-header">
+    <div class="kds-brand">
+      <h1 class="kds-title">Cocina - En vivo</h1>
+      <p class="kds-subtitle" id="activeOrdersCount">6 comandas activas · Viernes, 11 de septiembre</p>
+    </div>
+
+    <div class="kds-header-actions">
+      <!-- Botón Modal Agotados -->
+      <button class="kds-btn-stock" id="btnOpenStockModal">
+        <span>🍲</span> Control de Platos / Agotados
+      </button>
+
+      <!-- Reloj digital en vivo -->
+      <div class="kds-clock-box">
+        <div class="kds-clock" id="kdsClock">20:42:18</div>
+        <div class="kds-shift">Turno cena</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cuadrícula de Comandas en Vivo -->
+  <main class="kds-grid">
+    <!-- Comanda 1: Mesa 04 (Nuevo) -->
+    <div class="kds-card">
+      <div>
+        <div class="kds-card-head">
+          <div>
+            <h2 class="kds-table-title">Mesa 04</h2>
+            <div class="kds-time-ago">Hace 2 min</div>
+          </div>
+          <span class="kds-badge badge" style="background-color: rgba(59, 130, 246, 0.2); color: #60a5fa;">Nuevo</span>
+        </div>
+
+        <div class="kds-items-box" style="margin-top: 1.25rem;">
+          <div class="kds-dish-line"><span class="qty">1×</span> Tacos de arrachera</div>
+          <div class="kds-dish-line"><span class="qty">1×</span> Agua mineral</div>
+          <div class="kds-dish-note">Nota: Sin cebolla</div>
+        </div>
+      </div>
+
+      <button class="kds-action-btn kds-btn-start">Comenzar preparación</button>
+    </div>
+
+    <!-- Comanda 2: Mesa 02 (En preparación) -->
+    <div class="kds-card">
+      <div>
+        <div class="kds-card-head">
+          <div>
+            <h2 class="kds-table-title">Mesa 02</h2>
+            <div class="kds-time-ago">Hace 5 min</div>
+          </div>
+          <span class="kds-badge badge" style="background-color: rgba(245, 158, 11, 0.2); color: #fbbf24;">En preparación</span>
+        </div>
+
+        <div class="kds-items-box" style="margin-top: 1.25rem;">
+          <div class="kds-dish-line"><span class="qty">1×</span> Ensalada de la casa</div>
+          <div class="kds-dish-line"><span class="qty">1×</span> Pasta pomodoro</div>
+          <div class="kds-dish-note">Nota: Pasta sin parmesano</div>
+        </div>
+      </div>
+
+      <button class="kds-action-btn kds-btn-ready">Marcar listo para servir</button>
+    </div>
+
+    <!-- Comanda 3: Mesa 07 (Listo) -->
+    <div class="kds-card">
+      <div>
+        <div class="kds-card-head">
+          <div>
+            <h2 class="kds-table-title">Mesa 07</h2>
+            <div class="kds-time-ago">Hace 11 min</div>
+          </div>
+          <span class="kds-badge badge" style="background-color: rgba(16, 185, 129, 0.2); color: #34d399;">Listo</span>
+        </div>
+
+        <div class="kds-items-box" style="margin-top: 1.25rem;">
+          <div class="kds-dish-line"><span class="qty">2×</span> Hamburguesa clásica</div>
+          <div class="kds-dish-line"><span class="qty">1×</span> Papas trufadas</div>
+        </div>
+      </div>
+
+      <button class="kds-action-btn kds-btn-deliver">Entregado →</button>
+    </div>
+
+    <!-- Comanda 4: Mesa 15 (Listo) -->
+    <div class="kds-card">
+      <div>
+        <div class="kds-card-head">
+          <div>
+            <h2 class="kds-table-title">Mesa 15</h2>
+            <div class="kds-time-ago">Hace 15 min</div>
+          </div>
+          <span class="kds-badge badge" style="background-color: rgba(16, 185, 129, 0.2); color: #34d399;">Listo</span>
+        </div>
+
+        <div class="kds-items-box" style="margin-top: 1.25rem;">
+          <div class="kds-dish-line"><span class="qty">1×</span> Milanesa de pollo</div>
+          <div class="kds-dish-line"><span class="qty">1×</span> Agua de jamaica</div>
+        </div>
+      </div>
+
+      <button class="kds-action-btn kds-btn-deliver">Entregado →</button>
+    </div>
+  </main>
+
+  <!-- Modal Disponibilidad del Menú (controlPlatos.png) -->
+  <div class="modal-overlay" id="disponibilidadModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="btnCloseStockModal">✕</button>
+      <h2 class="modal-title">Disponibilidad del Menú</h2>
+      <p class="modal-desc">
+        Apaga el interruptor si un plato se terminó. La mesera no podrá agregarlo a nuevos pedidos
+      </p>
+
+      <div class="modal-dish-list">
+        <!-- Bandeja Paisa -->
+        <div class="modal-dish-row">
+          <div>
+            <div class="modal-dish-name">Bandeja Paisa</div>
+            <div class="modal-dish-status-text">
+              <span class="status-dot-green">●</span> Disponible
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="stock-toggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Sancocho de Gallina -->
+        <div class="modal-dish-row">
+          <div>
+            <div class="modal-dish-name">Sancocho de Gallina</div>
+            <div class="modal-dish-status-text">
+              <span class="status-dot-green">●</span> Disponible
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="stock-toggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Ajiaco Santafereño -->
+        <div class="modal-dish-row">
+          <div>
+            <div class="modal-dish-name">Ajiaco Santafereño</div>
+            <div class="modal-dish-status-text">
+              <span class="status-dot-red">●</span> Agotado
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="stock-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Limonada de Coco -->
+        <div class="modal-dish-row">
+          <div>
+            <div class="modal-dish-name">Limonada de Coco</div>
+            <div class="modal-dish-status-text">
+              <span class="status-dot-red">●</span> Agotado
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="stock-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Jugo de Mora -->
+        <div class="modal-dish-row">
+          <div>
+            <div class="modal-dish-name">Jugo de Mora</div>
+            <div class="modal-dish-status-text">
+              <span class="status-dot-red">●</span> Agotado
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="stock-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flecha de regreso abajo a la izquierda -->
+  <div style="position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 50;">
+    <a href="login.html" class="back-arrow-link" style="color: #6b7280;" title="Volver al menú de roles">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/cocina.js"></script>
+</body>
+</html>

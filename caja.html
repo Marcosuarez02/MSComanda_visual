@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caja y Facturación - MSComanda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pos.css">
+</head>
+<body class="pos-layout">
+
+  <!-- Header de Caja y Mesas (caja y facturación.png) -->
+  <header class="pos-header">
+    <div class="pos-header-left">
+      <a href="index.html" class="brand-logo" style="font-size: 1.15rem;">
+        <span>MSComanda</span>
+      </a>
+      <span style="color: var(--border-medium);">|</span>
+      <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;">Caja y mesas</span>
+    </div>
+
+    <div class="pos-header-right">
+      <div class="user-badge">
+        <div class="user-avatar">Ms</div>
+        <span style="font-size: 0.9rem; font-weight: 600;">Marco suarez</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal de Salón y Caja -->
+  <main class="cashier-container">
+    <div>
+      <div class="cashier-title-group">
+        <h1 class="cashier-title">Estado del salón</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Selecciona una mesa para revisar o cobrar su cuenta.</p>
+
+        <!-- Leyenda de colores -->
+        <div class="cashier-legend">
+          <div class="legend-item">
+            <span class="legend-dot free"></span>
+            <span>Libre</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot occupied"></span>
+            <span>Ocupada</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot pending"></span>
+            <span>Por cobrar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Mesas (Mesa 01 a Mesa 09) -->
+      <div class="tables-grid" id="tablesGrid">
+        <!-- Generado por js/caja.js -->
+      </div>
+    </div>
+
+    <!-- Panel Lateral de Facturación / Detalle de Mesa -->
+    <aside class="bill-panel">
+      <div>
+        <span class="bill-badge-status" id="billBadge">POR COBRAR</span>
+        <h2 class="bill-table-title" id="billTitle">Mesa 04</h2>
+        <p class="bill-info-sub" id="billSub">2 personas · Cuenta #0184</p>
+      </div>
+
+      <!-- Lista de consumos -->
+      <div class="bill-items-list" id="billItems">
+        <!-- Renderizado por js/caja.js -->
+      </div>
+
+      <!-- Desglose de totales -->
+      <div class="bill-summary-rows">
+        <div class="bill-summary-row">
+          <span>Subtotal</span>
+          <span id="billSubtotal">$1,110.00</span>
+        </div>
+        <div class="bill-summary-row">
+          <span>IVA (15%)</span>
+          <span id="billTax">$166.50</span>
+        </div>
+      </div>
+
+      <!-- Input de Propina -->
+      <div class="bill-input-row">
+        <span style="font-size: 0.9rem; color: var(--text-muted);">Propina</span>
+        <div style="display: flex; align-items: center; gap: 0.25rem;">
+          <span>$</span>
+          <input type="number" id="billTipInput" value="0.00" step="10" min="0" style="width: 70px; border: none; text-align: right; font-weight: 600; outline: none;">
+        </div>
+      </div>
+
+      <!-- Total a Pagar -->
+      <div class="bill-total-row">
+        <span class="bill-total-label">Total</span>
+        <span class="bill-total-amount" id="billTotal">$1,276.50</span>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="btnCobrar" style="padding: 0.85rem; font-size: 1.05rem;">
+        Cobrar y Liberar Mesa
+      </button>
+    </aside>
+  </main>
+
+  <!-- Flecha de regreso abajo a la izquierda -->
+  <div style="position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 50;">
+    <a href="login.html" class="back-arrow-link" title="Volver al menú de roles">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/caja.js"></script>
+</body>
+</html>
