@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra tu Restaurante - MSComanda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+  <!-- Logo de Marca (registrar.png) -->
+  <div class="auth-brand-header">
+    <div class="auth-brand-logo">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+        <line x1="6" y1="1" x2="6" y2="4"></line>
+        <line x1="10" y1="1" x2="10" y2="4"></line>
+        <line x1="14" y1="1" x2="14" y2="4"></line>
+      </svg>
+      <span>MS <span class="brand-highlight">Comanda</span></span>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Registro (registrar.png) -->
+  <div class="auth-card">
+    <h1 class="auth-title">Registra tu Restaurante</h1>
+    <p class="auth-subtitle">Empieza a gestionar pedidos en tiempo real en menos de 2 minutos.</p>
+
+    <form class="auth-form" onsubmit="event.preventDefault(); alert('¡Cuenta creada con éxito! Redirigiendo al panel administrativo...'); window.location.href='admin.html';">
+      <div class="form-group">
+        <label class="form-label">Nombre del Restaurante</label>
+        <input type="text" class="form-control" placeholder="Ej. El Fogón Santandereano" required>
+      </div>
+
+      <div class="auth-row-2">
+        <div class="form-group">
+          <label class="form-label">Tu Nombre</label>
+          <input type="text" class="form-control" placeholder="Marco Suárez" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Teléfono / WhatsApp</label>
+          <input type="tel" class="form-control" placeholder="300 123 4567" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" placeholder="admin@restaurante.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" minlength="8" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top: 0.5rem; padding: 0.85rem;">
+        Crear cuenta gratis
+      </button>
+
+      <div class="auth-footer-text">
+        ¿Ya tienes cuenta? <a href="login.html" class="auth-link">Inicia sesión aquí</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="auth-bottom-nav">
+    <a href="index.html" class="auth-back-link">
+      ← Volver a la página principal
+    </a>
+  </div>
+
+</body>
+</html>
