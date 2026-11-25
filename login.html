@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso al Panel - MSComanda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+  <!-- Logo de Marca (login.png) -->
+  <div class="auth-brand-header">
+    <div class="auth-brand-logo">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+        <line x1="6" y1="1" x2="6" y2="4"></line>
+        <line x1="10" y1="1" x2="10" y2="4"></line>
+        <line x1="14" y1="1" x2="14" y2="4"></line>
+      </svg>
+      <span>MS <span class="brand-highlight">Comanda</span></span>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Login (login.png) -->
+  <div class="auth-card">
+    <h1 class="auth-title">Acceso al Panel</h1>
+    <p class="auth-subtitle">Ingresa tus credenciales para acceder a cocina, mesas y facturación</p>
+
+    <form class="auth-form" id="loginForm" onsubmit="event.preventDefault(); window.location.href='admin.html';">
+      <div class="form-group">
+        <label class="form-label" for="loginEmail">Correo electrónico</label>
+        <input type="email" id="loginEmail" class="form-control" value="admin@restaurante.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="loginPass">Contraseña</label>
+        <input type="password" id="loginPass" class="form-control" value="************" required>
+      </div>
+
+      <div class="auth-check-row">
+        <label class="auth-checkbox-label">
+          <input type="checkbox" checked>
+          <span>Recordar sesión</span>
+        </label>
+        <a href="recuperar-password.html" class="auth-link">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top: 0.5rem; padding: 0.85rem;">
+        Ingresar al sistema
+      </button>
+
+      <div class="auth-footer-text">
+        ¿Aún no tienes cuenta? <a href="registro.html" class="auth-link">Registra tu restaurante</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Accesos directos a roles (como en login.png) -->
+  <div class="auth-bottom-nav">
+    <a href="index.html" class="auth-back-link">
+      ← Volver a la página principal
+    </a>
+
+    <div class="role-shortcuts">
+      <a href="cocina.html" class="role-btn">cocina</a>
+      <a href="toma-pedido.html" class="role-btn">Pedido</a>
+      <a href="caja.html" class="role-btn">Caja</a>
+      <a href="admin.html" class="role-btn">Administrador</a>
+    </div>
+  </div>
+
+</body>
+</html>
